@@ -36,5 +36,10 @@ body{
 
 .container{
     display: grid;
-    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content); //total 6 rows
+    // 1fr is 1 fractional part of the remaining space; minmax(6rem, 1fr) means that min. it will occupy 60px, but if it's more than that then it'll occupy 1fr space
+    grid-template-columns: [sidebar-start]8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content,14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; 
+    //1140px/8 = 142.5px,  using min-max to occupy either min-content or 140px 
+
+   
 }

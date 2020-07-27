@@ -1,3 +1,35 @@
 .features{
-    background-color: $color-grey-light-2;
+    grid-column: center-start / center-end;
+    margin: 15rem 0;
+    
+    //to display the contents of features in a grid
+    display: grid;
+    // grid-template-rows: auto auto; //not needed though 
+    // as we haven't defined now, so it is an implicit grid
+    // grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    //to make it responsive; autofit only allows that much amount 
+    // that it can fit in
+    grid-gap: 6rem;
+    align-items: start;
+
+}
+
+.feature{
+
+    display: grid; //to place the icon and the text in a grid
+    grid-template-columns: min-content 1fr;
+    grid-gap: 1.5rem;
+
+    &__icon{
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1/span 2; //-1 only works in case of explicit grid
+        transform: translateY(-1rem);
+    }
+
+    &__text{
+        font-size: 1.7rem;
+    }
 }
