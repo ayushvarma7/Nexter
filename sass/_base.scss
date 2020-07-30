@@ -62,7 +62,9 @@ body{
     }
 
     @media only screen and (max-width:$bp-medium){
-        grid-template-rows: 6rem calc(100vh -6rem); //the rest of the rows
+        display: grid;
+        grid-template-rows: 6rem calc(100vh- 6rem); 
+            //the rest of the rows
         // [min-content min-content min-content repeat(3, min-content)] 
         // will be done by automatic placement
 
